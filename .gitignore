@@ -1,0 +1,4 @@
+.idea
+server1/.venv
+server1/__pycache__/
+server2/.venv
