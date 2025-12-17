@@ -9,7 +9,6 @@ shopping_list = Path('db/shopping_list.json')
 app = FastAPI()
 
 
-
 def read_file(file):
     try:
         with open(file, 'r') as f:
@@ -31,6 +30,12 @@ def write_file(file, content, mode=None):
 
     except Exception as e:
         return {'Error' : e}
+
+
+@app.get('/')
+def home():
+    return {'message' : 'Hello from fastapi'}
+
 
 
 @app.get('/items')
@@ -58,5 +63,5 @@ def add_item(item : dict):
 
 
 
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="localhost", port=8000)
+# if __name__ == '__main__':
+#     uvicorn.run(app)

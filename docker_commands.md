@@ -41,7 +41,6 @@ docker build -t shopping-server2:v1
 ### Run the container
 
 ```bash
-docker run -it -v fastapi-db:/app/db sh
-
+docker run -it --mount type=bind,source=./server2/data,target=/app/data shopping-server2:v1
 ```
 
